@@ -36,7 +36,11 @@ const Login = () => {
           />
         </div>
 
-        <input type='submit' value='Login' className='btn btn-primary' />
+        <input
+          type='submit'
+          value='Login'
+          className='btn btn-block btn-primary'
+        />
       </form>
     </div>
   );
