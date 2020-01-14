@@ -1,12 +1,23 @@
-import React, { useState, useContext, useHook } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 
-const Register = () => {
+const Register = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
   const { setAlert } = alertContext;
-  const { register } = authContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.history.push("/home");
+    }
+    if (error === "Validation failed: Email has already been taken") {
+      setAlert(error, "danger");
+    }
+    clearErrors();
+    //eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
     name: "",
