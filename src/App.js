@@ -8,6 +8,11 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import "./App.css";
 import Alerts from "./components/Layout/Alerts";
+import setAuthToken from "./utils/setAuthToken";
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 const App = () => {
   return (
     <AuthState>
@@ -18,7 +23,7 @@ const App = () => {
             <div className='container'>
               <Alerts />
               <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/home' component={Home} />
                 <Route exact path='/signup' component={Register} />
                 <Route exact path='/login' component={Login} />
               </Switch>
