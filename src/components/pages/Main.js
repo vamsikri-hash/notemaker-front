@@ -3,16 +3,7 @@ import NoteForm from "../notes/NoteForm";
 import Notes from "../notes/Notes";
 
 const Main = () => {
-  return (
-    <div className='grid-2'>
-      <div>
-        <NoteForm />
-      </div>
-      <div>
-        <Notes />
-      </div>
-    </div>
-  );
+  return <div className='grid-2'>Hello Busy People</div>;
 };
 
 export default Main;
