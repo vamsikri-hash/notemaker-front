@@ -1,3 +1,12 @@
+export const GET_NOTES = "GET_NOTES";
+export const ADD_NOTE = "ADD_NOTE";
+export const DELETE_NOTE = "DELETE_NOTE";
+export const SET_CURRENT = "SET_CURRENT";
+export const CLEAR_CURRENT = "CLEAR_CURRENT";
+export const UPDATE_NOTE = "UPDATE_NOTE";
+export const CLEAR_NOTES = "CLEAR_NOTES";
+export const NOTE_ERROR = "NOTE_ERROR";
+
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 export const USER_LOADED = "USER_LOADED";
