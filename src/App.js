@@ -10,6 +10,7 @@ import "./App.css";
 import Alerts from "./components/Layout/Alerts";
 import setAuthToken from "./utils/setAuthToken";
 import Main from "./components/pages/Main";
+import NoteState from "./context/note/NoteState";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -17,22 +18,24 @@ if (localStorage.token) {
 const App = () => {
   return (
     <AuthState>
-      <AlertState>
-        <Router>
-          <Fragment>
-            <ReactNavbar />
-            <div className='container'>
-              <Alerts />
-              <Switch>
-                <Route exact path='/' component={Main} />
-                <Route exact path='/home' component={Home} />
-                <Route exact path='/signup' component={Register} />
-                <Route exact path='/login' component={Login} />
-              </Switch>
-            </div>
-          </Fragment>
-        </Router>
-      </AlertState>
+      <NoteState>
+        <AlertState>
+          <Router>
+            <Fragment>
+              <ReactNavbar />
+              <div className='container'>
+                <Alerts />
+                <Switch>
+                  <Route exact path='/' component={Main} />
+                  <Route exact path='/home' component={Home} />
+                  <Route exact path='/signup' component={Register} />
+                  <Route exact path='/login' component={Login} />
+                </Switch>
+              </div>
+            </Fragment>
+          </Router>
+        </AlertState>
+      </NoteState>
     </AuthState>
   );
 };
