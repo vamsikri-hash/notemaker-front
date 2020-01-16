@@ -1,17 +1,26 @@
 import React, { useState, useEffect, useContext } from "react";
 import NoteContext from "../../context/note/noteContext";
+import AlertContext from "../../context/alert/alertContext";
 
 const NoteForm = () => {
   const noteContext = useContext(NoteContext);
-  const { AddNote, UpdateNote, clearCurrent, current } = noteContext;
-
+  const {
+    AddNote,
+    UpdateNote,
+    clearCurrent,
+    current,
+    error,
+    clearNoteError
+  } = noteContext;
+  const alertContext = useContext(AlertContext);
+  const { setAlert } = alertContext;
   useEffect(() => {
     if (current !== null) {
       setNote(current);
     } else {
       setNote({ title: "" });
     }
-  }, [noteContext, current]);
+  }, [error, noteContext, current]);
   const [note, setNote] = useState({ title: "" });
   const { title } = note;
   const onChange = e => {
