@@ -10,7 +10,7 @@ const Register = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/home");
+      props.history.push("/dashboard");
     }
     if (error === "Validation failed: Email has already been taken") {
       setAlert(error, "danger");

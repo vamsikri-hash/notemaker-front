@@ -10,7 +10,7 @@ const Login = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/home");
+      props.history.push("/dashboard");
     }
     if (error === "Invalid credentials") {
       setAlert(error, "danger");
