@@ -10,7 +10,8 @@ import {
   CLEAR_CURRENT,
   UPDATE_NOTE,
   CLEAR_NOTES,
-  NOTE_ERROR
+  NOTE_ERROR,
+  CLEAR_NOTE_ERROR
 } from "../types";
 
 const NoteState = props => {
@@ -25,9 +26,7 @@ const NoteState = props => {
   const GetNotes = async () => {
     const config = {
       headers: {
-        "Content-Type": "Application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzkxOTk2MTd9.sYLI9SjkxEO9qiw5KDmcyp0UoA3Ubyii_1yDwk4w1W0"
+        "Content-Type": "Application/json"
       }
     };
     try {
@@ -50,9 +49,7 @@ const NoteState = props => {
   const AddNote = async obj => {
     const config = {
       headers: {
-        "Content-Type": "Application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzkyNDU5MDN9.26UwUfO62L5jel3I35n1OIreuRfWQxZ_3-LgHIvCnE8"
+        "Content-Type": "Application/json"
       }
     };
     try {
@@ -77,9 +74,7 @@ const NoteState = props => {
   const UpdateNote = async obj => {
     const config = {
       headers: {
-        "Content-Type": "Application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzkyNDU5MDN9.26UwUfO62L5jel3I35n1OIreuRfWQxZ_3-LgHIvCnE8"
+        "Content-Type": "Application/json"
       }
     };
     try {
@@ -102,19 +97,8 @@ const NoteState = props => {
   //Delete NOte
 
   const DeleteNote = async id => {
-    const config = {
-      headers: {
-        Authorization:
-          "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzkyNDU5MDN9.26UwUfO62L5jel3I35n1OIreuRfWQxZ_3-LgHIvCnE8"
-      }
-    };
-
     try {
-      await axios.delete(
-        `http://localhost:3000/api/v1/notes/${id}`,
-
-        config
-      );
+      await axios.delete(`http://localhost:3000/api/v1/notes/${id}`);
       dispatch({
         type: DELETE_NOTE,
         payload: id
@@ -132,7 +116,10 @@ const NoteState = props => {
   const clearCurrent = () => {
     dispatch({ type: CLEAR_CURRENT });
   };
-
+  //clear Note Error
+  const clearNoteError = () => {
+    dispatch({ type: CLEAR_NOTE_ERROR });
+  };
   //Clear Notes
 
   return (
@@ -146,7 +133,8 @@ const NoteState = props => {
         UpdateNote,
         DeleteNote,
         setCurrent,
-        clearCurrent
+        clearCurrent,
+        clearNoteError
       }}
     >
       {props.children}

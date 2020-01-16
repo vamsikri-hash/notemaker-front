@@ -6,6 +6,7 @@ export const CLEAR_CURRENT = "CLEAR_CURRENT";
 export const UPDATE_NOTE = "UPDATE_NOTE";
 export const CLEAR_NOTES = "CLEAR_NOTES";
 export const NOTE_ERROR = "NOTE_ERROR";
+export const CLEAR_NOTE_ERROR = "CLEAR_NOTE_ERROR";
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";

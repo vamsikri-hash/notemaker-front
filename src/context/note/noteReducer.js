@@ -6,6 +6,7 @@ import {
   CLEAR_CURRENT,
   UPDATE_NOTE,
   CLEAR_NOTES,
+  CLEAR_NOTE_ERROR,
   NOTE_ERROR
 } from "../types";
 
@@ -48,6 +49,12 @@ export default (state, action) => {
       return {
         ...state,
         error: action.payload
+      };
+    case CLEAR_NOTE_ERROR:
+      return {
+        ...state,
+        current: null,
+        error: null
       };
     default:
       return state;
