@@ -9,7 +9,6 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_NOTE,
-  CLEAR_NOTES,
   NOTE_ERROR,
   CLEAR_NOTE_ERROR
 } from "../types";
