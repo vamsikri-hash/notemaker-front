@@ -12,6 +12,8 @@ import setAuthToken from "./utils/setAuthToken";
 import Main from "./components/pages/Main";
 import NoteState from "./context/note/NoteState";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import ItemState from "./context/item/ItemState";
+import ItemHome from "./components/pages/ItemHome";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -20,22 +22,29 @@ const App = () => {
   return (
     <AuthState>
       <NoteState>
-        <AlertState>
-          <Router>
-            <Fragment>
-              <ReactNavbar />
-              <div className='container'>
-                <Alerts />
-                <Switch>
-                  <Route exact path='/' component={Main} />
-                  <PrivateRoute exact path='/dashboard' component={Home} />
-                  <Route exact path='/signup' component={Register} />
-                  <Route exact path='/login' component={Login} />
-                </Switch>
-              </div>
-            </Fragment>
-          </Router>
-        </AlertState>
+        <ItemState>
+          <AlertState>
+            <Router>
+              <Fragment>
+                <ReactNavbar />
+                <div className='container'>
+                  <Alerts />
+                  <Switch>
+                    <Route exact path='/' component={Main} />
+                    <PrivateRoute exact path='/dashboard' component={Home} />
+                    <PrivateRoute
+                      exact
+                      path='/dashboarditem'
+                      component={ItemHome}
+                    />
+                    <Route exact path='/signup' component={Register} />
+                    <Route exact path='/login' component={Login} />
+                  </Switch>
+                </div>
+              </Fragment>
+            </Router>
+          </AlertState>
+        </ItemState>
       </NoteState>
     </AuthState>
   );
