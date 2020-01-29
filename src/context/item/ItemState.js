@@ -9,7 +9,6 @@ import {
   SET_CURRENT_ITEM,
   CLEAR_CURRENT_ITEM,
   UPDATE_ITEM,
-  CLEAR_ITEMS,
   ITEM_ERROR,
   CLEAR_ITEM_ERROR
 } from "../types";
@@ -20,6 +19,8 @@ const ItemState = props => {
     current: null,
     error: null
   };
+  const n_id = localStorage.getItem("noteid");
+
   const [state, dispatch] = useReducer(itemReducer, initialState);
 
   //Get Items
@@ -31,7 +32,7 @@ const ItemState = props => {
     };
     try {
       const res = await axios.get(
-        "http://localhost:3000/api/v1/notes",
+        `http://localhost:3000/api/v1/notes/${n_id}/items`,
 
         config
       );
@@ -55,7 +56,7 @@ const ItemState = props => {
     try {
       console.log(obj);
       const res = await axios.post(
-        "http://localhost:3000/api/v1/notes",
+        `http://localhost:3000/api/v1/notes/${n_id}/items`,
         obj,
         config
       );
@@ -79,7 +80,7 @@ const ItemState = props => {
     };
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/v1/notes/${obj.id}`,
+        `http://localhost:3000/api/v1/notes/${n_id}/items/${obj.id}`,
         obj,
         config
       );
@@ -98,7 +99,9 @@ const ItemState = props => {
 
   const DeleteItem = async id => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/notes/${id}`);
+      await axios.delete(
+        `http://localhost:3000/api/v1/notes/${n_id}/items/${id}`
+      );
       dispatch({
         type: DELETE_ITEM,
         payload: id
