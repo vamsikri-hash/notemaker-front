@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import ItemContext from "../../context/item/itemContext";
 import AlertContext from "../../context/alert/alertContext";
 
-const NoteForm = () => {
+const ItemForm = () => {
   const itemContext = useContext(ItemContext);
   const {
     AddItem,
@@ -52,7 +52,7 @@ const NoteForm = () => {
           <input type='text' name='name' value={name} onChange={onChange} />
         </div>
         <div className='form-group'>
-          <label htmlFor='date'>Item Name</label>
+          <label htmlFor='date'>Deadline</label>
           <input
             type='date'
             name='deadline'
@@ -77,4 +77,4 @@ const NoteForm = () => {
   );
 };
 
-export default NoteForm;
+export default ItemForm;
