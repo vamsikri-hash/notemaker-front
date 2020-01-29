@@ -5,7 +5,6 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_NOTE,
-  CLEAR_NOTES,
   CLEAR_NOTE_ERROR,
   NOTE_ERROR
 } from "../types";
