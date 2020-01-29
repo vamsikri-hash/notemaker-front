@@ -11,8 +11,15 @@ const NoteItem = ({ noteitem }) => {
   const updated = new Date(updated_at);
 
   const onDelete = () => {
+    //console.log(id);
+    localStorage.setItem("noteid", 0);
     DeleteNote(id);
     clearCurrent();
+  };
+
+  const showItems = () => {
+    localStorage.setItem("noteid", id);
+    window.location = "/dashboarditem";
   };
 
   return (
@@ -44,6 +51,11 @@ const NoteItem = ({ noteitem }) => {
         <p className='m-1'>
           <button className='btn btn-danger btn-sm' onClick={onDelete}>
             Delete
+          </button>
+        </p>
+        <p className='m-1'>
+          <button className='btn btn-danger btn-sm' onClick={showItems}>
+            View Items
           </button>
         </p>
       </div>
