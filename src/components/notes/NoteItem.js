@@ -19,7 +19,6 @@ const NoteItem = ({ noteitem }) => {
 
   const showItems = () => {
     localStorage.setItem("noteid", id);
-    window.location.href = "/dashboarditem";
   };
 
   return (
@@ -55,7 +54,12 @@ const NoteItem = ({ noteitem }) => {
         </p>
         <p className='m-1'>
           <button className='btn btn-primary btn-sm' onClick={showItems}>
-            View Items
+            <a
+              href='/dashboarditem'
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              View Items
+            </a>
           </button>
         </p>
       </div>
