@@ -19,7 +19,7 @@ const NoteItem = ({ noteitem }) => {
 
   const showItems = () => {
     localStorage.setItem("noteid", id);
-    window.location = "/dashboarditem";
+    window.location.href = "/dashboarditem";
   };
 
   return (
