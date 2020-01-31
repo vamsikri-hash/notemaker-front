@@ -12,9 +12,9 @@ const ReactNavbar = ({ title, icon }) => {
   };
   const authlinks = (
     <Fragment>
-      <li>hello {user && user.name}</li>
+      <li className='large m-2'>hello {user && user.name}</li>
       <li>
-        <a onClick={onLogout} href='/'>
+        <a onClick={onLogout} href='/' className='large'>
           Logout
         </a>
       </li>
@@ -24,20 +24,26 @@ const ReactNavbar = ({ title, icon }) => {
   const guestlinks = (
     <Fragment>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to='/' className='large'>
+          Home
+        </Link>
       </li>
       <li>
-        <Link to='/signup'>Signup</Link>
+        <Link to='/signup' className='large'>
+          Signup
+        </Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link to='/login' className='large'>
+          Login
+        </Link>
       </li>
     </Fragment>
   );
 
   return (
-    <div className='navbar bg-primary'>
-      <h1>{title}</h1>
+    <div className='navbar bg-primary text-center'>
+      <h1 className='m-2 '>{title}</h1>
 
       <ul>{isAuthenticated ? authlinks : guestlinks}</ul>
     </div>

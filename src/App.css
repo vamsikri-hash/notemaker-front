@@ -30,6 +30,7 @@ a {
 
 a:hover {
   color: #666;
+  text-decoration: none;
 }
 
 ul {
@@ -50,14 +51,14 @@ img {
 
 /* Text Styles*/
 .x-large {
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .large {
-  font-size: 3rem;
-  line-height: 1.2;
+  font-size: 1.3rem;
+  line-height: 1;
   margin-bottom: 1rem;
 }
 

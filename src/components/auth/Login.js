@@ -46,13 +46,17 @@ const Login = props => {
         Account <span className='text-primary'>Login</span>
       </h1>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='m-2'>
         <div className='form-group'>
-          <label htmlFor='email'>email</label>
+          <label htmlFor='email' className='large'>
+            Email
+          </label>
           <input type='email' name='email' value={email} onChange={onChange} />
         </div>
         <div className='form-group'>
-          <label htmlFor='password'>password</label>
+          <label htmlFor='password' className='large'>
+            Password
+          </label>
           <input
             type='password'
             name='password'

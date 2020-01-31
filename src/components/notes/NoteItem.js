@@ -24,7 +24,7 @@ const NoteItem = ({ noteitem }) => {
 
   return (
     <div className='card bg-light'>
-      {title && <h3 className='text-primary text-left'>{title}</h3>}
+      {title && <h3 className='text-primary text-left x-large'>{title}</h3>}
       <ul className='List'>
         {created_at && (
           <li>
@@ -54,7 +54,7 @@ const NoteItem = ({ noteitem }) => {
           </button>
         </p>
         <p className='m-1'>
-          <button className='btn btn-danger btn-sm' onClick={showItems}>
+          <button className='btn btn-primary btn-sm' onClick={showItems}>
             View Items
           </button>
         </p>

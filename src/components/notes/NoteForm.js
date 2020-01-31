@@ -1,19 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import NoteContext from "../../context/note/noteContext";
-import AlertContext from "../../context/alert/alertContext";
 
 const NoteForm = () => {
   const noteContext = useContext(NoteContext);
-  const {
-    AddNote,
-    UpdateNote,
-    clearCurrent,
-    current,
-    error,
-    clearNoteError
-  } = noteContext;
-  const alertContext = useContext(AlertContext);
-  const { setAlert } = alertContext;
+  const { AddNote, UpdateNote, clearCurrent, current, error } = noteContext;
+
   useEffect(() => {
     if (current !== null) {
       setNote(current);
@@ -46,7 +37,7 @@ const NoteForm = () => {
       <h1>Create Note</h1>
 
       <form onSubmit={onSubmit}>
-        <div className='form-group'>
+        <div className='form-group x-large'>
           <label htmlFor='title'>Title</label>
           <input type='text' name='title' value={title} onChange={onChange} />
         </div>
@@ -57,7 +48,7 @@ const NoteForm = () => {
           className='btn  btn-dark'
         />
         {current && (
-          <div>
+          <div className='m-2'>
             <button className='btn btn-light btn-block' onClick={clearAll}>
               Clear
             </button>

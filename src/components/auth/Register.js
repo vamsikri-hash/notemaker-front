@@ -51,7 +51,7 @@ const Register = props => {
         Account <span className='text-primary'>Registartion</span>
       </h1>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='large'>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>
           <input
