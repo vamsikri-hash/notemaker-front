@@ -31,7 +31,7 @@ const AuthState = props => {
       setAuthToken(localStorage.token);
     }
     try {
-      const res = await axios.get("http://localhost:3000/auth");
+      const res = await axios.get("https://note-ticker.herokuapp.com/auth");
       console.log(res.data);
       dispatch({
         type: USER_LOADED,
@@ -55,7 +55,7 @@ const AuthState = props => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/signup",
+        "https://note-ticker.herokuapp.com/signup",
         formdata,
         config
       );
@@ -83,7 +83,7 @@ const AuthState = props => {
     console.log(formdata);
     try {
       const res = await axios.post(
-        "http://localhost:3000/auth/login",
+        "https://note-ticker.herokuapp.com/auth/login",
         formdata,
         config
       );

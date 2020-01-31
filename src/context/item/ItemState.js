@@ -32,7 +32,7 @@ const ItemState = props => {
     };
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/notes/${n_id}/items`,
+        `https://note-ticker.herokuapp.com/api/v1/notes/${n_id}/items`,
 
         config
       );
@@ -56,7 +56,7 @@ const ItemState = props => {
     try {
       console.log(obj);
       const res = await axios.post(
-        `http://localhost:3000/api/v1/notes/${n_id}/items`,
+        `https://note-ticker.herokuapp.com/api/v1/notes/${n_id}/items`,
         obj,
         config
       );
@@ -80,7 +80,7 @@ const ItemState = props => {
     };
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/v1/notes/${n_id}/items/${obj.id}`,
+        `https://note-ticker.herokuapp.com/api/v1/notes/${n_id}/items/${obj.id}`,
         obj,
         config
       );
@@ -100,7 +100,7 @@ const ItemState = props => {
   const DeleteItem = async id => {
     try {
       await axios.delete(
-        `http://localhost:3000/api/v1/notes/${n_id}/items/${id}`
+        `https://note-ticker.herokuapp.com/api/v1/notes/${n_id}/items/${id}`
       );
       dispatch({
         type: DELETE_ITEM,
