@@ -6,10 +6,10 @@ const Item = ({ item }) => {
   const itemContext = useContext(ItemContext);
   const { DeleteItem, setCurrentItem, clearCurrentItem } = itemContext;
 
-  const { id, name, deadline } = item;
-  /* try to woking on adding this
+  const { id, name, deadline, done, created_at, updated_at } = item;
+
   const created = new Date(created_at);
-  const updated = new Date(updated_at);   **/
+  const updated = new Date(updated_at);
 
   const onDelete = () => {
     DeleteItem(id);
