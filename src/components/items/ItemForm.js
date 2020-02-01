@@ -38,46 +38,56 @@ const ItemForm = () => {
     clearCurrentItem();
   };
   return (
-    <div className='form-container'>
-      <h1>Create Item</h1>
+    <div>
+      <div className='form-container'>
+        <h1>Create Item</h1>
 
-      <form onSubmit={onSubmit}>
-        <div className='form-group large'>
-          <label htmlFor='name'>Item Name</label>
-          <input type='text' name='name' value={name} onChange={onChange} />
-        </div>
-        <div className='form-group large'>
-          <label htmlFor='date'>Deadline</label>
-          <input
-            type='date'
-            name='deadline'
-            value={deadline}
-            onChange={onChange}
-          />
-        </div>
-        <div className='form-group large'>
-          <input
-            type='checkbox'
-            name='done'
-            className='m-2 x-large'
-            onChange={onChange}
-            checked={done ? "checked" : ""}
-          />
-          <label htmlFor='done'>Completed</label>
-        </div>
-        <input
-          type='submit'
-          value={current ? "Update Item" : "Add Item"}
-          className='btn  btn-dark'
-        />
-        {current && (
-          <div>
-            <button className='btn btn-light btn-block m-2' onClick={clearAll}>
-              Clear
-            </button>
+        <form onSubmit={onSubmit}>
+          <div className='form-group large'>
+            <label htmlFor='name'>Item Name</label>
+            <input type='text' name='name' value={name} onChange={onChange} />
           </div>
-        )}
-      </form>
+          <div className='form-group large'>
+            <label htmlFor='date'>Deadline</label>
+            <input
+              type='date'
+              name='deadline'
+              value={deadline}
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group large'>
+            <input
+              type='checkbox'
+              name='done'
+              className='m-2 x-large'
+              onChange={onChange}
+              checked={done ? "checked" : ""}
+            />
+            <label htmlFor='done'>Completed</label>
+          </div>
+          <input
+            type='submit'
+            value={current ? "Update Item" : "Add Item"}
+            className='btn  btn-dark'
+          />
+          {current && (
+            <div>
+              <button
+                className='btn btn-light btn-block m-2'
+                onClick={clearAll}
+              >
+                Clear
+              </button>
+            </div>
+          )}
+        </form>
+      </div>
+      <button className='btn btn-primary btn-sm' style={{ marginLeft: "30px" }}>
+        <a href='/dashboard' style={{ color: "white", textDecoration: "none" }}>
+          Back To Notes
+        </a>
+      </button>
     </div>
   );
 };

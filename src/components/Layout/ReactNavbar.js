@@ -12,7 +12,10 @@ const ReactNavbar = ({ title, icon }) => {
   };
   const authlinks = (
     <Fragment>
-      <li className='large m-2'>hello {user && user.name}</li>
+      <li className=' m-2' style={{ paddingRight: "500px" }}>
+        <span className='x-large'>Hello {user && user.name}</span>
+      </li>
+
       <li>
         <a onClick={onLogout} href='/' className='large'>
           Logout
