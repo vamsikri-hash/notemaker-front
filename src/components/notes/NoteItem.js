@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import NoteContext from "../../context/note/noteContext";
+import { Link } from "react-router-dom";
 
 const NoteItem = ({ noteitem }) => {
   const noteContext = useContext(NoteContext);
@@ -53,13 +54,17 @@ const NoteItem = ({ noteitem }) => {
           </button>
         </p>
         <p className='m-1'>
-          <button className='btn btn-primary btn-sm' onClick={showItems}>
-            <a
-              href='/dashboarditem'
-              style={{ color: "white", textDecoration: "none" }}
+          <button
+            className='btn btn-primary btn-sm'
+            style={{ marginLeft: "30px" }}
+          >
+            <Link
+              to='/dashboarditem'
+              className='large'
+              style={{ textDecoration: "none", color: "white" }}
             >
               View Items
-            </a>
+            </Link>
           </button>
         </p>
       </div>

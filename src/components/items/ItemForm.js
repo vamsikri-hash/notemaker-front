@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import ItemContext from "../../context/item/itemContext";
+import { Link } from "react-router-dom";
 
 const ItemForm = () => {
   const itemContext = useContext(ItemContext);
@@ -84,9 +85,13 @@ const ItemForm = () => {
         </form>
       </div>
       <button className='btn btn-primary btn-sm' style={{ marginLeft: "30px" }}>
-        <a href='/dashboard' style={{ color: "white", textDecoration: "none" }}>
+        <Link
+          to='/dashboard'
+          className='large'
+          style={{ textDecoration: "none", color: "white" }}
+        >
           Back To Notes
-        </a>
+        </Link>
       </button>
     </div>
   );
