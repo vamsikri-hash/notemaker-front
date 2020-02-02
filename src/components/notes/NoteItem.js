@@ -58,13 +58,14 @@ const NoteItem = ({ noteitem }) => {
             className='btn btn-primary btn-sm'
             style={{ marginLeft: "30px" }}
           >
-            <Link
-              to='/dashboarditem'
+            <a
+              href='/dashboarditem'
               className='large'
               style={{ textDecoration: "none", color: "white" }}
+              onClick={showItems}
             >
               View Items
-            </Link>
+            </a>
           </button>
         </p>
       </div>

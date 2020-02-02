@@ -32,7 +32,7 @@ const AuthState = props => {
     }
     try {
       const res = await axios.get("https://note-ticker.herokuapp.com/auth");
-      console.log(res.data);
+      //console.log(res.data);
       dispatch({
         type: USER_LOADED,
         payload: res.data
@@ -59,7 +59,7 @@ const AuthState = props => {
         formdata,
         config
       );
-      console.log(res.data);
+      // console.log(res.data);
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data
@@ -80,14 +80,14 @@ const AuthState = props => {
         "Content-Type": "application/json"
       }
     };
-    console.log(formdata);
+    //console.log(formdata);
     try {
       const res = await axios.post(
         "https://note-ticker.herokuapp.com/auth/login",
         formdata,
         config
       );
-      console.log(res.data);
+      // console.log(res.data);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data

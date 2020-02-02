@@ -36,13 +36,13 @@ const ItemState = props => {
 
         config
       );
-      console.log(res.data);
+      //console.log(res.data);
       dispatch({
         type: GET_ITEMS,
         payload: res.data
       });
     } catch (error) {
-      console.log(error.response);
+      //console.log(error.response);
       dispatch({ type: ITEM_ERROR, payload: error.response.data.message });
     }
   };
@@ -54,19 +54,19 @@ const ItemState = props => {
       }
     };
     try {
-      console.log(obj);
+      //console.log(obj);
       const res = await axios.post(
         `https://note-ticker.herokuapp.com/api/v1/notes/${n_id}/items`,
         obj,
         config
       );
-      console.log(res.data);
+      //console.log(res.data);
       dispatch({
         type: ADD_ITEM,
         payload: res.data
       });
     } catch (error) {
-      console.log(error.response);
+      // console.log(error.response);
       dispatch({ type: ITEM_ERROR, payload: error.response.data.message });
     }
   };
@@ -89,9 +89,9 @@ const ItemState = props => {
         type: UPDATE_ITEM,
         payload: res.data
       });
-      console.log(state.items);
+      //console.log(state.items);
     } catch (error) {
-      console.log(error.response);
+      //console.log(error.response);
       dispatch({ type: ITEM_ERROR, payload: error.response.data.message });
     }
   };

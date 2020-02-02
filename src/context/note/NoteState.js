@@ -34,13 +34,13 @@ const NoteState = props => {
 
         config
       );
-      console.log(res.data);
+      //console.log(res.data);
       dispatch({
         type: GET_NOTES,
         payload: res.data
       });
     } catch (error) {
-      console.log(error.response);
+     // console.log(error.response);
       dispatch({ type: NOTE_ERROR, payload: error.response.data.message });
     }
   };
@@ -52,13 +52,13 @@ const NoteState = props => {
       }
     };
     try {
-      console.log(obj);
+      //console.log(obj);
       const res = await axios.post(
         "https://note-ticker.herokuapp.com/api/v1/notes",
         obj,
         config
       );
-      console.log(res.data);
+     // console.log(res.data);
       dispatch({
         type: ADD_NOTE,
         payload: res.data
@@ -87,7 +87,7 @@ const NoteState = props => {
         type: UPDATE_NOTE,
         payload: res.data
       });
-      console.log(state.notes);
+     // console.log(state.notes);
     } catch (error) {
       console.log(error.response);
       dispatch({ type: NOTE_ERROR, payload: error.response.data.message });

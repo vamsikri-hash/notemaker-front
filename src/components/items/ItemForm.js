@@ -26,8 +26,8 @@ const ItemForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("entering submit");
-    console.log(item);
+    //console.log("entering submit");
+    //console.log(item);
     if (current === null) {
       AddItem(item);
     } else {
@@ -55,6 +55,7 @@ const ItemForm = () => {
               name='deadline'
               value={deadline}
               onChange={onChange}
+              required
             />
           </div>
           <div className='form-group large'>
@@ -85,13 +86,13 @@ const ItemForm = () => {
         </form>
       </div>
       <button className='btn btn-primary btn-sm' style={{ marginLeft: "30px" }}>
-        <Link
-          to='/dashboard'
+        <a
+          href='/dashboard'
           className='large'
           style={{ textDecoration: "none", color: "white" }}
         >
           Back To Notes
-        </Link>
+        </a>
       </button>
     </div>
   );

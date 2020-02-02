@@ -5,6 +5,7 @@ import Item from "./Item";
 const Items = () => {
   const itemContext = useContext(ItemContext);
   const { items, GetItems } = itemContext;
+
   useEffect(() => {
     GetItems();
     //eslint-disable-next-line
