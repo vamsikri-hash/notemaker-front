@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import ItemForm from "../items/ItemForm";
 import AuthContext from "../../context/auth/authContext";
 import Items from "../items/Items";
+import Spinner from "../Layout/Spinner";
 
 const ItemHome = () => {
   const authContext = useContext(AuthContext);
@@ -9,16 +10,21 @@ const ItemHome = () => {
     authContext.loaduser();
     //eslint-disable-next-line
   }, []);
-  return (
-    <div className='grid-2'>
-      <div>
-        <ItemForm />
+  const { loading } = authContext;
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div className='grid-2'>
+        <div>
+          <ItemForm />
+        </div>
+        <div>
+          <Items />
+        </div>
       </div>
-      <div>
-        <Items />
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default ItemHome;
